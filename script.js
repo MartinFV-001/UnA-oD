@@ -50,6 +50,17 @@ for (let i = 0; i < 50; i++) {
   particles.push(createParticle());
 }
 
+// Redimensionar canvas al cambiar tamaño de la ventana
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    // Si necesitas generar más partículas en caso de un canvas más grande
+    particles = [];
+    for (let i = 0; i < 50; i++) {
+        particles.push(createParticle());
+    }
+});
+
 function drawParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
