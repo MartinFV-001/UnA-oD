@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ee9ca7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Indie Flower', cursive;
+    overflow: hidden;
+}
+
+
+.container {
+    text-align: center;
+    background-color: #ffebee;
+    padding: 40px;
+    border-radius: 20px;
+    border: 3px solid #ff6b81;
+    box-shadow: 0 8px 20px rgba(255, 107, 129, 0.3);
+    max-width: 400px;
+    width: 90%;
+}
+
+.header_text {
+    font-size: 36px;
+    color: #ff6b81;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 107, 129, 0.2);
+}
+
+.gif_container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 20px;
+    border: 2px solid #ff6b81;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #ff6b81;
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    box-shadow: 0 4px 10px rgba(255, 107, 129, 0.3);
+}
+
+.btn:hover {
+    background-color: white;
+    color: #ff6b81;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 129, 0.4);
+}
+
+#noButton {
+    background-color: #ff4757;
+    border-color: #ff4757;
+}
+
+#noButton:hover {
+    background-color: white;
+    color: #ff4757;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.wiggle {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b81;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    animation: heartFade 1s ease-out forwards;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b81;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+/* Animación para desvanecer el corazón */
+@keyframes heartFade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1.5);
+    }
+}
+
+
+.gif_container img {
+    clip-path: inset(15px 24px 15px 24px); /* Ajusta los valores según los bordes */
+}
+
+
+
+/* Deshabilitar la selección de texto e imágenes en toda la página */
+body, img {
+    user-select: none; /* Previene selección de texto/imágenes */
+    -webkit-user-select: none; /* Soporte para navegadores basados en Webkit */
+    -ms-user-select: none; /* Soporte para IE/Edge */
+}
+
+
+/* Opcional: evitar que las imágenes reaccionen a clics */
+img {
+    pointer-events: none; /* Deshabilita interacción con la imagen */
+}
+
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;  /* Asegurarte de que esté detrás de todo */
+  }
+  
+
